@@ -1,0 +1,28 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Base.Theme.MobileApp" parent="Theme.Material3.DayNight.NoActionBar">
+
+        <!-- App main color -->
+        <item name="colorPrimary">#0F3D3E</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+
+        <!-- Status bar atas -->
+        <item name="android:statusBarColor">#0F3D3E</item>
+        <item name="android:windowLightStatusBar">false</item>
+
+        <!-- Navigation bar bawah -->
+        <item name="android:navigationBarColor">#0F3D3E</item>
+
+        <!-- Avoid forced contrast on system bars -->
+        <item name="android:enforceStatusBarContrast" tools:targetApi="q">false</item>
+        <item name="android:enforceNavigationBarContrast" tools:targetApi="q">false</item>
+
+        <!-- Make sure app is not fullscreen -->
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowNoTitle">true</item>
+
+    </style>
+
+    <style name="Theme.MobileApp" parent="Base.Theme.MobileApp" />
+
+</resources>

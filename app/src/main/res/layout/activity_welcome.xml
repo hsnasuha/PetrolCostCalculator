@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/welcomeMain"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="28dp"
+    android:background="#EEF6F7">
+
+    <!-- WELCOME IMAGE -->
+    <ImageView
+        android:id="@+id/imgWelcome"
+        android:layout_width="260dp"
+        android:layout_height="260dp"
+        android:src="@drawable/welcome_photo"
+        android:scaleType="centerCrop"
+        android:contentDescription="Welcome Image"
+        android:layout_marginBottom="24dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Petrol Cost Calculator"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        android:fontFamily="casual"
+        android:textColor="#0F3D3E"
+        android:textAlignment="center"
+        android:shadowColor="#BFE3E5"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="3"
+        android:lineSpacingExtra="2dp"
+        android:layout_marginBottom="10dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calculate petrol usage, payment amount, and BUDI MADANI savings in seconds."
+        android:textSize="15sp"
+        android:fontFamily="sans-serif"
+        android:textColor="#4B5563"
+        android:textAlignment="center"
+        android:lineSpacingExtra="5dp"
+        android:layout_marginBottom="10dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Smart • Simple • Accurate"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="#E65100"
+        android:textAlignment="center"
+        android:letterSpacing="0.06"
+        android:layout_marginBottom="32dp" />
+
+    <Button
+        android:id="@+id/btnStart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="GET STARTED"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#E65100"
+        android:padding="15dp" />
+
+</LinearLayout>
