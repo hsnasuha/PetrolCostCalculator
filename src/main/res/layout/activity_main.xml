@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- FAKE STATUS BAR BACKGROUND -->
+    <View
+        android:id="@+id/statusBarBackground"
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:background="#0F3D3E" />
+
+    <!-- TOOLBAR -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="#FA7D68"
+        android:minHeight="56dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#EEF6F7"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="22dp">
+
+            <!-- HEADER -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="⛽ Petrol Cost Calculator"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="#0F3D3E"
+                android:textAlignment="center"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Estimate total petrol cost and BUDI MADANI rebate easily."
+                android:textSize="13sp"
+                android:textColor="#4B5563"
+                android:textAlignment="center"
+                android:lineSpacingExtra="3dp"
+                android:layout_marginBottom="24dp" />
+
+            <!-- PETROL TYPE -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="⛽ Petrol Type"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#111827"
+                android:layout_marginBottom="6dp" />
+
+            <Spinner
+                android:id="@+id/spinnerPetrolType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="50dp"
+                android:background="#FFFFFF"
+                android:padding="10dp"
+                android:layout_marginBottom="16dp" />
+
+            <!-- PETROL PRICE PER LITER -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="💰 Petrol Price per Liter (RM)"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#111827"
+                android:layout_marginBottom="6dp" />
+
+            <EditText
+                android:id="@+id/etPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:background="#FFFFFF"
+                android:hint="Example: 4.27"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"
+                android:minHeight="50dp"
+                android:padding="14dp"
+                android:textColor="#111827"
+                android:textColorHint="#888888" />
+
+            <!-- FUEL USAGE -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🛢 Fuel Usage (Liter)"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#111827"
+                android:layout_marginBottom="6dp" />
+
+            <EditText
+                android:id="@+id/etUsage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Example: 40"
+                android:inputType="numberDecimal"
+                android:importantForAutofill="no"
+                android:background="#FFFFFF"
+                android:padding="14dp"
+                android:minHeight="50dp"
+                android:textColor="#111827"
+                android:textColorHint="#888888"
+                android:layout_marginBottom="18dp" />
+
+            <!-- BUDI MADANI BOX -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#FFF3E0"
+                android:padding="18dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="18dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="🎫 BUDI MADANI Eligibility"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#E65100"
+                    android:layout_marginBottom="10dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Select your eligibility to apply the RON95 rebate rate."
+                    android:textSize="13sp"
+                    android:textColor="#555555"
+                    android:lineSpacingExtra="3dp"
+                    android:layout_marginBottom="12dp" />
+
+                <RadioGroup
+                    android:id="@+id/rgBudi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rbYes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Eligible"
+                        android:textColor="#333333"
+                        android:padding="8dp" />
+
+                    <RadioButton
+                        android:id="@+id/rbNo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Not Eligible"
+                        android:textColor="#333333"
+                        android:padding="8dp" />
+
+                </RadioGroup>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="📌 RM1.99/liter rebate is only available for eligible RON95 users."
+                    android:textSize="12sp"
+                    android:textColor="#E65100"
+                    android:lineSpacingExtra="3dp"
+                    android:layout_marginTop="10dp" />
+
+            </LinearLayout>
+
+            <!-- CALCULATE BUTTON -->
+            <Button
+                android:id="@+id/btnCalculate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CALCULATE NOW"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:backgroundTint="#E65100"
+                android:textColor="#FFFFFF"
+                android:layout_marginTop="6dp"
+                android:padding="14dp" />
+
+            <!-- RESULT CARD WITH REAL TABLE -->
+            <LinearLayout
+                android:id="@+id/resultCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/result_card_bg"
+                android:padding="18dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="📋 Calculation Summary"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#E65100"
+                    android:layout_marginBottom="10dp" />
+
+                <TextView
+                    android:id="@+id/tvStatusTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Press CALCULATE NOW to view result"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#0F3D3E"
+                    android:layout_marginBottom="4dp" />
+
+                <TextView
+                    android:id="@+id/tvStatusDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="13sp"
+                    android:textColor="#4B5563"
+                    android:lineSpacingExtra="3dp"
+                    android:layout_marginBottom="12dp" />
+
+                <TableLayout
+                    android:id="@+id/resultTable"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:stretchColumns="1"
+                    android:visibility="gone">
+
+                    <!-- TABLE HEADER -->
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Item"
+                            android:textStyle="bold"
+                            android:textColor="#FFFFFF"
+                            android:textSize="13sp"
+                            android:background="@drawable/table_header_bg"
+                            android:padding="10dp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Value"
+                            android:textStyle="bold"
+                            android:textColor="#FFFFFF"
+                            android:textSize="13sp"
+                            android:background="@drawable/table_header_bg"
+                            android:padding="10dp" />
+
+                    </TableRow>
+
+                    <!-- PETROL TYPE -->
+                    <TableRow>
+                        <TextView
+                            android:text="Petrol Type"
+                            android:textStyle="bold"
+                            android:textColor="#111827"
+                            android:textSize="13sp"
+                            android:background="@drawable/table_cell_bg"
+                            android:padding="10dp" />
+
+                        <TextView
+                            android:id="@+id/tvPetrolTypeValue"
+                            android:text="-"
+                            android:textColor="#111827"
+                            android:textSize="13sp"
+                            android:background="@drawable/table_cell_bg"
+                            android:padding="10dp" />
+                    </TableRow>
+
+                    <!-- PRICE PER LITER -->
+                    <TableRow>
+                        <TextView
+                            android:text="Price / Liter"
+                            android:textStyle="bold"
+                            android:textColor="#111827"
+                            android:textSize="13sp"
+                            android:background="@drawable/table_cell_bg"
+                            android:padding="10dp" />
+
+                        <TextView
+                            android:id="@+id/tvPriceValue"
+                            android:text="-"
+                            android:textColor="#111827"
+                            android:textSize="13sp"
+                            android:background="@drawable/table_cell_bg"
+                            android:padding="10dp" />
+                    </TableRow>
+
+                    <!-- FUEL USAGE -->
+                    <TableRow>
+                        <TextView
+                            android:text="Fuel Usage"
+                            android:textStyle="bold"
+                            android:textColor="#111827"
+                            android:textSize="13sp"
+                            android:background="@drawable/table_cell_bg"
+                            android:padding="10dp" />
+
+                        <TextView
+                            android:id="@+id/tvUsageValue"
+                            android:text="-"
+                            android:textColor="#111827"
+                            android:textSize="13sp"
+                            android:background="@drawable/table_cell_bg"
+                            android:padding="10dp" />
+                    </TableRow>
+
+                    <!-- TOTAL COST -->
+                    <TableRow>
+                        <TextView
+                            android:text="Total Cost"
+                            android:textStyle="bold"
+                            android:textColor="#111827"
+                            android:textSize="13sp"
+                            android:background="@drawable/table_cell_bg"
+                            android:padding="10dp" />
+
+                        <TextView
+                            android:id="@+id/tvTotalCostValue"
+                            android:text="-"
+                            android:textColor="#111827"
+                            android:textSize="13sp"
+                            android:background="@drawable/table_cell_bg"
+                            android:padding="10dp" />
+                    </TableRow>
+
+                    <!-- BUDI REBATE -->
+                    <TableRow>
+                        <TextView
+                            android:text="BUDI Rebate"
+                            android:textStyle="bold"
+                            android:textColor="#111827"
+                            android:textSize="13sp"
+                            android:background="@drawable/table_cell_bg"
+                            android:padding="10dp" />
+
+                        <TextView
+                            android:id="@+id/tvBudiRebateValue"
+                            android:text="-"
+                            android:textColor="#111827"
+                            android:textSize="13sp"
+                            android:background="@drawable/table_cell_bg"
+                            android:padding="10dp" />
+                    </TableRow>
+
+                    <!-- FINAL PAYABLE -->
+                    <TableRow>
+                        <TextView
+                            android:text="Final Payable"
+                            android:textStyle="bold"
+                            android:textColor="#111827"
+                            android:textSize="13sp"
+                            android:background="@drawable/table_cell_bg"
+                            android:padding="10dp" />
+
+                        <TextView
+                            android:id="@+id/tvFinalPayableValue"
+                            android:text="-"
+                            android:textStyle="bold"
+                            android:textColor="#E65100"
+                            android:textSize="13sp"
+                            android:background="@drawable/table_cell_bg"
+                            android:padding="10dp" />
+                    </TableRow>
+
+                </TableLayout>
+
+                <TextView
+                    android:id="@+id/tvResultNote"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="12sp"
+                    android:textColor="#E65100"
+                    android:lineSpacingExtra="3dp"
+                    android:layout_marginTop="10dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- BOTTOM NAVIGATION -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        app:itemIconTint="#0F3D3E"
+        app:itemTextColor="#0F3D3E"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_nav_menu" />
+
+</LinearLayout>
